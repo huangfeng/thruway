@@ -1,0 +1,134 @@
+<!--side bar-->
+<aside class="side-left">
+    <ul class="sidebar">
+        <li class="first" ng-class="isActive('dashboard')"> <!--always define class .first for first-child of li element sidebar left-->
+            <a ui-sref="main.dashboard" title="面板">
+                <div class="helper-font-24">
+                    <i class="icofont-dashboard"></i>
+                </div>
+                <span class="sidebar-text">面板</span>
+            </a>
+        </li>
+        <li ng-class="isActive('storage')">
+            <a ui-sref="main.storage" title="库存查询">
+                <div class="helper-font-24">
+                    <i class="icofont-magnet"></i>
+                </div>
+                <span class="sidebar-text">库存查询</span>
+            </a>
+        </li>
+        <li ng-class="isActive('stock|draw|apply')">
+            <a title="流程审批">
+                <div class="badge badge-important">3</div>
+                <div class="helper-font-24">
+                    <i class="icofont-edit"></i>
+                </div>
+                <span class="sidebar-text">流程审批</span>
+            </a>
+            <ul class="sub-sidebar-form corner-top shadow-white">
+                <li>
+                    <a ui-sref="main.stock" title="采购申请" class="corner-all">
+                        <i class="icofont-file"></i>
+                        <span class="sidebar-text">采购申请</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="main.draw" title="领用申请" class="corner-all">
+                        <i class="icofont-book"></i>
+                        <span class="sidebar-text">领用申请</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+
+                <li>
+                    <a ui-sref="main.apply" title="审批" class="corner-all">
+                        <i class="icofont-picture"></i>
+                        <span class="sidebar-text">审批</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li ng-class="isActive('statistic')">
+            <a ui-sref="main.statistic" title="库存统计">
+                <div class="helper-font-24">
+                    <i class="icofont-bar-chart"></i>
+                </div>
+                <span class="sidebar-text">库存统计</span>
+            </a>
+        </li>
+        <li>
+            <a ui-sref="main.maintain" title="库存维护">
+                <div class="helper-font-24">
+                    <i class="icofont-table"></i>
+                </div>
+                <span class="sidebar-text">库存维护</span>
+            </a>
+        </li>
+        <li>
+            <a href="grids.html" title="grids">
+                <div class="helper-font-24">
+                    <i class="icofont-columns"></i>
+                </div>
+                <span class="sidebar-text"></span>
+            </a>
+        </li>
+        <li>
+            <a href="icons.html" title="icons">
+                <div class="helper-font-24">
+                    <i class="icofont-star"></i>
+                </div>
+                <span class="sidebar-text">Icons</span>
+            </a>
+        </li>
+        <li>
+            <a href="widgets.html" title="widgets">
+                <div class="helper-font-24">
+                    <i class="icofont-reorder"></i>
+                </div>
+                <span class="sidebar-text">Widgets</span>
+            </a>
+        </li>
+        <li ng-class="isActive('dept|users')">
+            <a href="#" title="系统维护">
+                <div class="badge badge-important">5</div>
+                <div class="helper-font-24">
+                    <i class="icofont-th-large"></i>
+                </div>
+                <span class="sidebar-text">系统维护</span>
+            </a>
+            <ul class="sub-sidebar-form corner-top shadow-white">
+                <li>
+                    <a ui-sref="main.dept" title="部门维护" class="corner-all">
+                        <i class="elusive-group"></i>
+                        <span class="sidebar-text">部门维护</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="main.users" title="账号维护" class="corner-all">
+                        <i class="icofont-lock"></i>
+                        <span class="sidebar-text">账号维护</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="invoice.html" title="invoice" class="corner-all">
+                        <i class="icofont-barcode"></i>
+                        <span class="sidebar-text">Invoice</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pricing.html" title="pricing table" class="corner-all">
+                        <i class="icofont-briefcase"></i>
+                        <span class="sidebar-text">Pricing</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="bonus-page/resume/index.html" title="resume" class="corner-all">
+                        <i class="icofont-user"></i>
+                        <span class="sidebar-text">Resume</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside><!--/side bar -->

@@ -1,0 +1,32 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="box corner-all formbox">
+            <div class="box-header grd-white color-silver-dark corner-top">
+                <span>库存查询</span>
+            </div>
+
+            <div class="box-body">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div id="catalogTree" x-tree-view></div>
+                    </div>
+                    <div class="span9">
+                        <table id="storageTable" class="table table-bordered table-striped responsive"
+                                x-data-table="" aa-data="storages" ao-column-defs="columnDefs"
+                                o-table-tools="tableTools">
+                            <thead>
+                                <tr>
+                                    <th>类别编号</th>
+                                    <th>类别</th>
+                                    <th>物品名称</th>
+                                    <th>物品编号</th>
+                                    <th>库存数量</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

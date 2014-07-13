@@ -1,0 +1,66 @@
+{{initialize()}}
+<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="close()">&times;</button>
+    <h3>修改用户{{user.name}}</h3>
+</div>
+<div class="modal-body">
+    <div id="form-wizard">
+        <form name="user-wizard" id="wrapped" class="form-horizontal">
+            <div class="step">
+                <input type="hidden" name="id" ng-model="user.id"/>
+                <div class="control-group">
+                    <label class="control-label" for="userName">用户名</label>
+                    <div class="controls">
+                        <input type="text" name="userName" id="userName" class="grd-white" ng-model="user.username" disabled />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">密码</label>
+                    <div class="controls">
+                        <input type="password" id="password" name="password" class="grd-white" ng-model="user.password" data-validate="{required: true, messages:{required:'请输入密码'}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="control-group">
+                    <label class="control-label" for="userNo">用户编号</label>
+                    <div class="controls">
+                        <input type="text" name="userNo" id="userNo" class="grd-white" ng-model="user.user_no" data-validate="{required: true, messages:{required:'请输入用户编号'}}" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="name">姓名</label>
+                    <div class="controls">
+                        <input type="text" name="name" id="name" class="grd-white" ng-model="user.name" data-validate="{required: true, messages:{required:'请输入用户姓名'}}" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="deptSelect">部门</label>
+                    <div class="controls">
+                        <select id="deptSelect" ng-model="user.dept_id"
+                                x-select-box-it="" default-text="请选择部门" selections="depts" default-value="deptDefault" fn-on-change="deptChange"
+                                data-validate="{required: true, messages:{required:'请选择用户所在部门'}}">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit step">
+                <div class="control-group">
+                    <p class="help-block">点击保存，修改用户{{user.name}}！</p>
+                </div>
+                <div class="alert alert-error" ng-show="showErrorMsg()">{{errorMsg}}</div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" name="backward" class="btn backward">上一步</button>
+                <button type="button" name="forward" class="btn forward">下一步</button>
+                <button type="submit" name="process" class="btn btn-primary submit">保存</button>
+            </div>
+        </form>
+    </div><!--/wizard-->
+</div>
+<div class="modal-footer">
+    <button type="button" ng-click="close()" class="btn">关闭</button>
+</div>

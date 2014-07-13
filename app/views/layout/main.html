@@ -1,0 +1,142 @@
+{{initialize()}}
+<!-- section header -->
+<header class="header">
+    <!--nav bar helper-->
+    <div class="navbar-helper">
+        <div class="row-fluid">
+            <!--panel site-name-->
+            <div class="span2">
+                <div class="panel-sitename">
+                    <h2><a ui-sref="main.dashbaord"><span class="color-teal">库存</span>管理</a></h2>
+                </div>
+            </div>
+            <!--/panel name-->
+
+            <div class="span5" ng-show="isLoggedIn()">
+                <!--panel search-->
+                <div class="panel-search">
+                    <form class="form-search" ng-submit="quickSearch()" />
+                    <div class="input-icon-append">
+                        <button type="submit" rel="tooltip-bottom" title="search" class="icon"><i class="icofont-search"></i></button>
+                        <input class="input-large search-query grd-white" maxlength="23" placeholder="快速查询..." type="text" ng-model="queryString"/>
+                    </div>
+                    </form>
+                </div><!--/panel search-->
+            </div>
+            <div class="span5" ng-show="isLoggedIn()">
+                <!--panel button ext-->
+                <div class="panel-ext">
+                    <div id="user-nav" class="navbar-inverse">
+                        <ul class="btn-group">
+                            <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span class="text">用户信息</span></a></li>
+                            <li class="btn btn-inverse dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">消息</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="sAdd" title="新消息" ng-click="showLatestNews()">新消息</a></li>
+                                    <li><a class="sInbox" title="" href="#">收件箱</a></li>
+                                    <li><a class="sOutbox" title="" href="#">发件箱</a></li>
+                                    <li><a class="sTrash" title="" href="#">清空</a></li>
+                                </ul>
+                            </li>
+                            <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
+                            <li class="btn btn-inverse"><a title="" ui-sref="login"><i class="icon icon-share-alt"></i> <span class="text">退出</span></a></li>
+                        </ul>
+                    </div>
+
+                </div><!--panel button ext-->
+            </div>
+        </div>
+    </div><!--/nav bar helper-->
+</header>
+
+<!-- section content -->
+<section class="section">
+    <div class="row-fluid">
+        <div class="span1" ui-view="navbar">
+        </div>
+        <!-- span content -->
+        <div class="span9">
+            <!-- content -->
+            <div class="content">
+                <!-- content-header -->
+                <div class="content-header">
+                    <ul class="content-header-action pull-right">
+                        <li>
+                            <a href="#">
+                                <span data-chart="peity-bar" data-height="32" data-colours='["#00A600", "#00A600"]' x-peity-chart="bar">5,3,9,6,5,9,7,3,5,2</span>
+                                <div class="action-text color-green">{{totalGoods}} <span class="helper-font-small color-silver-dark">库存商品</span></div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <span data-chart="peity-bar" data-height="32" data-colours='["#00A0B1", "#00A0B1"]' x-peity-chart="bar">9,7,9,6,3,5,3,5,5,2</span>
+                                <div class="action-text color-teal">{{goodsOut}} <span class="helper-font-small color-silver-dark">本月领用</span></div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <span data-chart="peity-bar" data-height="32" data-colours='["#BF1E4B", "#BF1E4B"]' x-peity-chart="bar">6,5,9,7,3,5,2,5,3,9</span>
+                                <div class="action-text color-red">{{goodsIn}} <span class="helper-font-small color-silver-dark">本月采购</span></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <h2><i ng-class="getCurrentIconName()"></i> {{getCurrentHeadTitle()}} <small>{{getCurrentSubTitle()}}</small></h2>
+                </div><!-- /content-header -->
+
+                <!-- content-breadcrumb -->
+                <div class="content-breadcrumb">
+                    <!--breadcrumb-nav-->
+                    <ul class="breadcrumb-nav pull-right">
+                        <li class="divider"></li>
+                        <li class="btn-group">
+                            <a href="#" class="btn btn-small btn-link dropdown-toggle" data-toggle="dropdown">
+                                <i class="icofont-tasks"></i> Tasks
+                                <i class="icofont-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Some Action</a></li>
+                                <li><a href="#">Other Action</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Something Else</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="btn-group">
+                            <a href="#" class="btn btn-small btn-link">
+                                <i class="icofont-money"></i> Orders <span class="color-red">(+12)</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="btn-group">
+                            <a href="#" class="btn btn-small btn-link">
+                                <i class="icofont-user"></i> Users <span class="color-red">(+34)</span>
+                            </a>
+                        </li>
+                    </ul><!--/breadcrumb-nav-->
+
+                    <!--breadcrumb-->
+                    <ul class="breadcrumb">
+                        <li><a ui-sref="main.dashboard"><i class="icofont-home"></i> 面板</a> <span class="divider">&rsaquo;</span></li>
+                        <li class="active">{{getCurrentBreadcrumbName()}}</li>
+                    </ul><!--/breadcrumb-->
+                </div><!-- /content-breadcrumb -->
+
+                <!-- content-body -->
+                <div class="content-body" ui-view>
+
+                </div><!--/content-body -->
+            </div><!-- /content -->
+        </div>
+        <!-- end span contnet -->
+        <!-- span side-right -->
+        <div class="span2" ui-view="cartbar">
+        </div>
+    </div>
+
+</section>
+
+<!-- section footer -->
+<footer>
+    <a rel="to-top" href="#top"><i class="icofont-circle-arrow-up"></i></a>
+</footer>

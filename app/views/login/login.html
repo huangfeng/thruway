@@ -1,0 +1,61 @@
+<!-- section header -->
+<header class="header">
+    <!--nav bar helper-->
+    <div class="navbar-helper">
+        <div class="row-fluid">
+            <!--panel site-name-->
+            <div class="span2">
+                <div class="panel-sitename">
+                    <h2><a ui-sref="dashboard"><span class="color-teal">库存</span>管理</a></h2>
+                </div>
+            </div>
+            <!--/panel name-->
+        </div>
+    </div><!--/nav bar helper-->
+</header>
+
+<!-- section content -->
+<section class="section">
+    <div class="row-fluid">
+        <div class="container">
+            <div class="signin-form row-fluid">
+                <!--Sign In-->
+                <div class="span6 offset3">
+                    <div class="box corner-all">
+                        <div class="box-header grd-teal color-white corner-top">
+                            <span>登录:</span>
+                        </div>
+                        <div class="box-body bg-white">
+                            <form name="loginForm" id="loginForm" ng-submit="login()" novalidate="novalidate">
+                                {{initialize()}}
+                                <div class="control-group">
+                                    <label class="control-label" for="userName">用户名</label>
+                                    <div class="controls">
+                                        <input type="text" name="userName" id="userName" class="input-block-level grd-white" data-validate="{required: true, messages:{required:'请输入用户名'}}" ng-model="credentials.userName" autocomplete="off" autofocus="autofocus"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="password">密码</label>
+                                    <div class="controls">
+                                        <input type="password" name="password" id="password" class="input-block-level grd-white" data-validate="{required: true, messages:{required:'请输入密码'}}" ng-model="credentials.password" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="rememberMe">记住我</label>
+                                    <div class="controls" >
+                                        <input type="checkbox" name="rememberMe" id="rememberMe" ng-model="credentials.rememberMe"
+                                               data-on-color="info" data-off-color="danger"
+                                               data-on-text="<i class='icon-ok icon-white'></i>" data-off-text="<i class='icon-remove'></i>">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <input type="submit" class="btn btn-block btn-large btn-primary" value="登录" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!--/Sign In-->
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+{{initialize()}}
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+    <h3>最新消息</h3>
+</div>
+<div class="modal-body">
+    <div>
+        <table id="newsTable" class="table table-bordered table-striped responsive" x-data-table="" aa-data="news" s-dom="sDom">
+            <thead>
+            <tr>
+                <th>日期</th>
+                <th>主题</th>
+                <th>内容</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" ng-click="close()" class="btn">关闭</button>
+</div>
